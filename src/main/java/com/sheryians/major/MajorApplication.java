@@ -15,7 +15,10 @@ public class MajorApplication {
 
 	public static void main(String[] args) {
 		
-		Dotenv dotenv = Dotenv.load();
+		//Dotenv dotenv = Dotenv.load();
+		Dotenv dotenv = Dotenv.configure()
+        .ignoreIfMissing()
+        .load();
 
 	    // Set environment variables manually
 	    System.setProperty("GOOGLE_CLIENT_ID", dotenv.get("GOOGLE_CLIENT_ID"));
